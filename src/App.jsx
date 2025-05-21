@@ -8,7 +8,7 @@ import Products from "./components/Products";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/sadans-landing-page/">
       <Routes>
         <Route path="/" element={<NavbarLayout />}>
           <Route index element={<HomePage />} />
