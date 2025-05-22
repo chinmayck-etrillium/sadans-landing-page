@@ -1,24 +1,24 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import NavbarLayout from "./components/NavBarLayout";
-import HomePage from "./components/Homepage";
-import About from "./components/About";
-import ContactForm from "./components/ContactForm";
-import Products from "./components/Products";
+import { RouterProvider } from "react-router-dom";
+import router from "./components/Router";
+import LoadingLogo from "./components/LoadingLogo";
+import { useEffect, useState } from "react";
 
 function App() {
-  return (
-    <BrowserRouter basename="/sadans-landing-page/">
-      <Routes>
-        <Route path="/" element={<NavbarLayout />}>
-          <Route index element={<HomePage />} />
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<ContactForm />} />
-          <Route path="products" element={<Products />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <LoadingLogo />;
+  }
+  return <RouterProvider router={router} />;
 }
 
 export default App;

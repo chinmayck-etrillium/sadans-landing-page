@@ -1,7 +1,7 @@
 import React from "react";
 import HeroSection from "./HeroSection";
 import Features from "./Features";
-import Testimonials from "./Testimonials";
+import Testimonials from "./Testimonial";
 import Products from "./Products";
 import Footer from "./Footer";
 
@@ -12,7 +12,6 @@ const HomePage = () => {
       <Features />
       <Products />
       <Testimonials />
-      <Footer />
     </>
   );
 };

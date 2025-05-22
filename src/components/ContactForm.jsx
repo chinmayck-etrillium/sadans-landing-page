@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
@@ -16,16 +20,21 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="bg-[#fff9f0] py-16 px-6 max-w-3xl mx-auto">
-      <h2 className="text-4xl font-bold text-yellow-800 mb-8 text-center">Get in Touch</h2>
+    <section className="bg-[#fff9f0] py-16 px-6 max-w-4xl mx-auto mt-10 self-start">
+      <h2 className="text-4xl font-bold text-yellow-800 mb-8 text-center">
+        Get in Touch
+      </h2>
       {submitted && (
         <p className="bg-yellow-200 text-yellow-900 p-4 mb-6 rounded text-center font-semibold">
           Thank you for reaching out! We will get back to you soon.
         </p>
       )}
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-6 w-full">
         <div>
-          <label htmlFor="name" className="block mb-2 font-semibold text-yellow-700">
+          <label
+            htmlFor="name"
+            className="block mb-2 font-semibold text-yellow-700"
+          >
             Name
           </label>
           <input
@@ -41,7 +50,10 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label htmlFor="email" className="block mb-2 font-semibold text-yellow-700">
+          <label
+            htmlFor="email"
+            className="block mb-2 font-semibold text-yellow-700"
+          >
             Email
           </label>
           <input
@@ -57,7 +69,10 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label htmlFor="message" className="block mb-2 font-semibold text-yellow-700">
+          <label
+            htmlFor="message"
+            className="block mb-2 font-semibold text-yellow-700"
+          >
             Message
           </label>
           <textarea
@@ -74,7 +89,7 @@ const ContactForm = () => {
 
         <button
           type="submit"
-          className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-8 rounded shadow-md transition"
+          className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-8 rounded shadow-md transition w-full"
         >
           Send Message
         </button>
